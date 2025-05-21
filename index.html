@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Grow - Organic Instagram Growth</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: linear-gradient(145deg, #1a2a44, #0d1a26);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="#00f0ff" stroke-opacity="0.1" stroke-width="0.5"><path d="M0 50h20M20 50v20M20 70h20M40 70v20M40 90h20M60 90v-20M60 70h20M80 70v-20M80 50h20M50 0v20M50 20h20M70 20v20M70 40h20M90 40v20M90 60h-20M70 60v20M70 80h-20M50 80v20M50 40v-20M30 40h-20M10 40v-20M10 20h20M30 20v-20"/></svg>') repeat;
+            animation: circuitFlow 20s linear infinite;
+            z-index: -1;
+        }
+        @keyframes circuitFlow {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .header {
+            background: transparent;
+            color: #00f0ff;
+            padding: 20px;
+            margin: -30px -30px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+            animation: glow 1.5s ease-in-out infinite;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            text-shadow: 0 0 5px #00f0ff;
+        }
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; }
+            50% { text-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff; }
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #00f0ff;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        input::placeholder {
+            color: #b0b0b0;
+            opacity: 1;
+        }
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><path fill="#00f0ff" d="M0 0h10L5 5z"/></svg>') no-repeat right 10px center;
+            background-size: 10px;
+        }
+        button {
+            background: linear-gradient(90deg, #00f0ff, #00aaff);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #00aaff, #00f0ff);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
+            transform: translateY(-2px);
+        }
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        button:hover::before {
+            left: 100%;
+        }
+        #qrCode {
+            max-width: 200px;
+            margin: 15px auto;
+            border: 2px solid #00f0ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        .screen {
+            display: none;
+            animation: slideIn 0.5s;
+        }
+        .screen.active {
+            display: block;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #b0b0b0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer a {
+            color: #00f0ff;
+            text-decoration: none;
+        }
+        .dashboard-metrics {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            border: 1px solid #00f0ff;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+        .dashboard-metrics p {
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .service-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .service-options button {
+            flex: 1 1 45%;
+            margin: 5px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .rating {
+            color: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen active">
+            <div class="header">
+                <h1>Quick Grow - Real Growth</h1>
+                <p>Delivered in Minutes!</p>
+            </div>
+            <input type="text" id="username" placeholder="Instagram Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="goToAudienceScreen()">Login</button>
+        </div>
+
+        <!-- Audience Selection Screen -->
+        <div id="audienceScreen" class="screen">
+            <div class="header">
+                <h1>Quick Grow - Target Your Audience</h1>
+            </div>
+            <select id="ageRange" required>
+                <option value="" disabled selected>Select Age Range</option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35+">35+</option>
+            </select>
+            <input type="text" id="location" placeholder="Location (e.g., India, USA)" required>
+            <input type="text" id="interests" placeholder="Interests (e.g., Fitness, Fashion)" required>
+            <button onclick="goToServiceScreen()">Next</button>
+            <button onclick="switchScreen('loginScreen')">Back</button>
+        </div>
+
+        <!-- Service Selection Screen -->
+        <div id="serviceScreen" class="screen">
+            <div class="header">
+                <h1>Quick Grow - Choose a Service</h1>
+            </div>
+            <div class="service-options">
+                <button onclick="selectService('followers')">Buy Instagram Followers</button>
+                <button onclick="selectService('likes')">Buy Instagram Likes</button>
+                <button onclick="selectService('views')">Buy Instagram Views</button>
+                <button onclick="selectService('comments')">Buy Instagram Comments</button>
+                <button onclick="selectService('storyViews')">Buy Instagram Story Views</button>
+                <button onclick="selectService('tiktokFollowers')">Buy TikTok Followers</button>
+                <button onclick="selectService('tiktokLikes')">Buy TikTok Likes</button>
+            </div>
+            <button onclick="switchScreen('audienceScreen')">Back</button>
+        </div>
+
+        <!-- Quantity Selection Screen -->
+        <div id="quantityScreen" class="screen">
+            <div class="header">
+                <h1>Quick Grow - <span id="serviceTitle"></span></h1>
+            </div>
+            <input type="text" id="targetUsername" placeholder="Instagram/TikTok ID" required>
+            <input type="number" id="quantity" placeholder="Enter Quantity (e.g., 100)" min="100" required>
+            <input type="text" id="price" placeholder="Price (Auto-calculated)" readonly>
+            <button onclick="goToPaymentScreen()">Buy</button>
+            <button onclick="switchScreen('serviceScreen')">Back</button>
+        </div>
+
+        <!-- Payment Screen -->
+        <div id="paymentScreen" class="screen">
+            <div class="header">
+                <h1>Quick Grow - Payment</h1>
+            </div>
+            <p>Please scan the QR code to make payment</p>
+            <img id="qrCode" src="qr.jpg" alt="QR Code">
+            <button onclick="goToUtrScreen()">Next</button>
+            <button onclick="switchScreen('quantityScreen')">Back</button>
+        </div>
+
+        <!-- UTR Submission Screen -->
+        <div id="utrScreen" class="screen">
+            <div class="header">
+                <h1>Quick Grow - Submit UTR</h1>
+            </div>
+            <form id="utrForm">
+                <input type="text" id="utrNumber" name="utr_number" placeholder="Enter UTR Number" required>
+                <button type="submit">Submit</button>
+            </form>
+            <button onclick="switchScreen('paymentScreen')">Back</button>
+        </div>
+
+        <!-- Dashboard Screen -->
+        <div id="dashboardScreen" class="screen">
+            <div class="header">
+                <h1>Quick Grow - Your Dashboard</h1>
+            </div>
+            <div class="dashboard-metrics">
+                <p><strong>Service:</strong> <span id="dashboardService"></span></p>
+                <p><strong>Quantity:</strong> <span id="dashboardQuantity">0</span></p>
+                <p><strong>Engagement Rate:</strong> <span id="engagementRate">0%</span></p>
+                <p><strong>Status:</strong> Processing UTR</p>
+            </div>
+            <button onclick="switchScreen('loginScreen')">Back to Home</button>
+            <button onclick="switchScreen('utrScreen')">Back</button>
+        </div>
+
+        <div class="footer">
+            <span class="rating">5.0 ★★★★★</span>
+            <span>Payment: Apple Pay | Visa | More</span>
+            <span>Contact: <a href="mailto:support@quickgrow.com">support@quickgrow.com</a> | <a href="#">Live Chat</a></span>
+        </div>
+    </div>
+
+    <script>
+        let selectedService = '';
+
+        // Select service and navigate to quantity screen
+        function selectService(service) {
+            selectedService = service;
+            const serviceTitle = {
+                'followers': 'Buy Instagram Followers',
+                'likes': 'Buy Instagram Likes',
+                'views': 'Buy Instagram Views',
+                'comments': 'Buy Instagram Comments',
+                'storyViews': 'Buy Instagram Story Views',
+                'tiktokFollowers': 'Buy TikTok Followers',
+                'tiktokLikes': 'Buy TikTok Likes'
+            };
+            document.getElementById('serviceTitle').textContent = serviceTitle[service];
+            document.getElementById('targetUsername').placeholder = service.includes('tiktok') ? 'TikTok ID' : 'Instagram ID';
+            switchScreen('quantityScreen');
+        }
+
+        // Calculate price based on service and quantity
+        document.getElementById('quantity').addEventListener('input', function() {
+            const quantity = parseInt(this.value) || 0;
+            let pricePerUnit;
+            if (selectedService === 'likes' || selectedService === 'storyViews') {
+                pricePerUnit = 50 / 300; // ₹50 for 300 likes or story views
+            } else if (selectedService === 'views') {
+                pricePerUnit = 60 / 1000; // ₹60 for 1000 views
+            } else {
+                pricePerUnit = 10 / 100; // ₹10 for 100 followers, comments, TikTok followers, or likes
+            }
+            const price = quantity * pricePerUnit;
+            document.getElementById('price').value = `₹${price.toFixed(2)}`;
+        });
+
+        // Navigate to Audience Selection Screen
+        function goToAudienceScreen() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                switchScreen('audienceScreen');
+            } else {
+                alert('Please enter both username and password');
+            }
+        }
+
+        // Navigate to Service Selection Screen
+        function goToServiceScreen() {
+            const ageRange = document.getElementById('ageRange').value;
+            const location = document.getElementById('location').value;
+            const interests = document.getElementById('interests').value;
+            if (ageRange && location && interests) {
+                switchScreen('serviceScreen');
+            } else {
+                alert('Please fill all audience targeting fields');
+            }
+        }
+
+        // Navigate to Payment Screen
+        function goToPaymentScreen() {
+            const targetUsername = document.getElementById('targetUsername').value;
+            const quantity = document.getElementById('quantity').value;
+            if (targetUsername && quantity && parseInt(quantity) >= 100) {
+                switchScreen('paymentScreen');
+            } else {
+                alert('Please enter a valid ID and at least 100 units');
+            }
+        }
+
+        // Navigate to UTR Screen
+        function goToUtrScreen() {
+            switchScreen('utrScreen');
+        }
+
+        // Handle UTR form submission with Formspree
+        document.getElementById('utrForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const utrNumber = document.getElementById('utrNumber').value;
+            if (!utrNumber) {
+                alert('Please enter a valid UTR number');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('utr_number', utrNumber);
+            formData.append('service', selectedService);
+            formData.append('target_username', document.getElementById('targetUsername').value);
+            formData.append('quantity', document.getElementById('quantity').value);
+            formData.append('price', document.getElementById('price').value);
+            formData.append('age_range', document.getElementById('ageRange').value);
+            formData.append('location', document.getElementById('location').value);
+            formData.append('interests', document.getElementById('interests').value);
+
+            fetch('https://formspree.io/f/mwpozjaj', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('dashboardService').textContent = selectedService.replace(/([A-Z])/g, ' $1').toUpperCase();
+                    document.getElementById('dashboardQuantity').textContent = document.getElementById('quantity').value;
+                    document.getElementById('engagementRate').textContent = '2.5%'; // Mock value
+                    switchScreen('dashboardScreen');
+                    alert('Processing... Verifying UTR number');
+                } else {
+                    alert('Error submitting UTR. Please try again.');
+                    // User stays on utrScreen
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error submitting UTR. Please try again.');
+                // User stays on utrScreen
+            });
+        });
+
+        // Helper function to switch between screens
+        function switchScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
